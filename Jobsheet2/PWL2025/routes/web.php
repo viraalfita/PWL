@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +60,9 @@ Route::get('/article/{id}', ArticleController::class);
 
 // Resource Controller
 Route::resource('photos', PhotoController::class);
+
+// View
+Route::get('/greeting', [
+    WelcomeController::class,
+    'greeting'
+]);
